@@ -10,10 +10,11 @@ body {
     height: 400px;
 }
 
-.colorGrid {
+.color {
     width: calc(100% / 16);
     height: calc(100% / 16);
     cursor: pointer;
+    float: left; /* Alinear los elementos en la cuadrícula */
 }
 
 #selectedColor {
