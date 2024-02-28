@@ -1,22 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var colorGrid = document.getElementById('colorGrid');
-    var selectedColor = document.getElementById('selectedColor');
+    var paleta = document.getElementById('colorGrid'); // Selecciona el contenedor de la paleta de colores
+    var texto = document.getElementById('texto'); // Selecciona el contenedor de texto
 
-    // Generar la cuadrícula de colores RGB
+    // Crear matriz de colores RGB
     for (var r = 0; r <= 255; r += 16) {
         for (var g = 0; g <= 255; g += 16) {
             for (var b = 0; b <= 255; b += 16) {
+                // Crear elemento div para cada color
                 var colorDiv = document.createElement('div');
                 colorDiv.className = 'color';
                 colorDiv.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
-                
-                // Agregar evento de clic para mostrar el color seleccionado
+
+                // Agregar evento click para cambiar el color del texto
                 colorDiv.addEventListener('click', function() {
                     var color = this.style.backgroundColor;
-                    selectedColor.textContent = 'Color seleccionado: ' + color;
+                    texto.style.color = color; // Cambia el color del texto al color seleccionado
                 });
 
-                colorGrid.appendChild(colorDiv);
+                // Agregar elemento a la paleta
+                paleta.appendChild(colorDiv); // Agrega el color a la paleta de colores
+                
             }
         }
     }

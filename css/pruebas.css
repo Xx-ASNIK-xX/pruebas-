@@ -10,7 +10,7 @@ body {
     height: 400px;
 }
 
-.color {
+.colorGrid {
     width: calc(100% / 16);
     height: calc(100% / 16);
     cursor: pointer;
